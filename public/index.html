@@ -12,12 +12,53 @@
     <title>Cat-alogue</title>
   </head>
   <body>
-    <h1>Cat-alogue</h1>
-    <input id="name" type="text" placeholder="name">
-    <input id="human" type="text" placeholder="human">
-    <input id="hobby" type="text" placeholder="hobby">
-    <button id="get-cats" type="submit">Refresh the cat-alogue! 🐈↻</button>
+    <header>
+      <h1>Cat-alogue</h1>
+    </header>
+    <main>
+    <nav>
+      <article class="navOptions">
+        <h2>Get all cats</h2>
+        <button id="get-cats" type="submit" name="getCats">Submit / Refresh the cat-alogue! 🐈↻</button>
+      </article>
+      <article class="navOptions">
+        <h2>Get cat by Id</h2>
+        <label>Input cat Id</label>
+        <input id = "get-cat-id" type="number" min="1" step="1">
+        <button id="get-cat" type="submit" name="getById">Get cat 🐈</button>
+      </article>
+      <article class="navOptions">
+        <h2>Get cat by name</h2>
+        <label>Input cat name</label>
+        <input id = "get-cat-name" type="text" maxlength="15">
+        <button id="get-cat" type="submit" name="getByName">Get cat 🐈</button>
+      </article>
+      
+      <article class="navOptions">
+        <h2>Create cat</h2>
+        <label>Cat Name <input id="catName" type="text"></label>
+        <label>Cat Human <input id="humanName" type="text"></label>
+        <label>Cat Hobby <input id="hobby" type="text"></label>
+        <button id="create-cat" type="submit" name="createCat">Create Cat 🐈</button>
+      </article>
+
+      <article class="navOptions">
+        <h2>Update cat</h2>
+        <label>Cat Name <input id="catName" type="text"></label>
+        <label>Cat Human <input id="humanName" type="text"></label>
+        <label>Cat Hobby <input id="hobby" type="text"></label>
+        <button id="update-cat" type="submit" name="updateCat">Update Cat 🐈</button>
+      </article>
+
+      <article class="navOptions">
+        <h2>Delete cat</h2>
+        <label>Introduce cat Id</label>
+        <input id = "delete-id" type="number" min="1" step="1">
+        <button id="delete-cat" type="submit" name="deleteCat">Delete Cat 🐈</button>
+      </article>    
+    </nav>
     <section id="cats"></section>
+    </main>
     <script src="/js/main.js"></script>
   </body>
 </html>

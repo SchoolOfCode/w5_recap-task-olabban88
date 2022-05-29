@@ -14,6 +14,29 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  margin: 0.3rem;
+}
+
+main {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav {
+  width: 30%;
+}
+
+section {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 input {
   margin-bottom: 10px;
 }
@@ -31,4 +54,64 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.navOptions {
+  border-radius: 0.5rem;
+  border: 1px dotted black;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.update {
+  display: none;
+}
+
+#form {
+  width: 100%;
+  background-color: rgba(253, 187, 45, 0.8) ;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.create-update {
+  color: gray;
+}
+
+.selectedLAbel {
+  background-color: rgba(253, 187, 45, 0.8) ;
+  color: black
+}
+
+#cats article {
+    background: radial-gradient(
+    circle,
+    blue,
+    darkblue
+    );
+  color: white;
+  width: 30%;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  box-shadow: 0.2rem 0.2rem 0.2rem black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#cats span {
+  padding: 0.2rem;
+ align-self: flex-start;
+}
+
+input[type='number'] {
+  width: 2rem;
 }
