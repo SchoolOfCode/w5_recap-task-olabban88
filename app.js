@@ -17,8 +17,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// Tell to app the path where we are going to use our router module difined.
-app.use("/api/cats", router);   // change the path here to mask the path for the url variable in main.js of task 3 
+app.use("/api/cats", router);
 
 app.use(express.static(path.join(__dirname, "public")));
 
