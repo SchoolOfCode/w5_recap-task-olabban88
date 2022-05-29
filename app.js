@@ -1,19 +1,33 @@
 import express from "express";
+import { fileURLToPath } from "url";
+import path, { dirname } from "path";
+import cookieParser from "cookie-parser";
 import logger from "morgan";
 
-const PORT = process.env.PORT || "3000";
+import router from "./routes/cats.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express();
+
+const PORT = process.env.PORT || "3000";
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+// Tell to app the path where we are going to use our router module difined.
+app.use("/api/cats", router);   // change the path here to mask the path for the url variable in main.js of task 3 
+
+app.use(express.static(path.join(__dirname, "public")));
 
 /** DO NOT CHANGE THIS ROUTE - it serves our front-end */
-app.get("/", function (req, res) {
-  res.render("index", { title: "Cats" });
+app.get("/", function (req, res, next) {
+  res.render("index", { title: "books" });
 });
 
-const cats = [
+export const cats = [
   {
     id: 1,
     name: "Tony",
@@ -45,3 +59,5 @@ Test this in your browser.
 app.listen(PORT, function () {
   console.log(`Server listening on port: ${PORT}`);
 });
+
+export default app;
